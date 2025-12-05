@@ -1,0 +1,217 @@
+/* Basis kleuren uit het logo */
+:root {
+    --bg-main: #f4e7c5;      /* lichte beige */
+    --bg-card: #e2d0a2;      /* iets donkerder beige */
+    --text-main: #1d2430;    /* donkerblauw/zwart */
+    --accent: #1d2430;       /* zelfde donkere kleur voor knoppen/nav */
+    --accent-light: #ffffff;
+}
+
+/* Resetje */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* Header */
+
+.site-header {
+    background: var(--bg-card);
+    border-bottom: 3px solid var(--accent);
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+.site-title h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.site-title p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Navigatie */
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.main-nav a:hover {
+    background: var(--accent);
+    color: var(--accent-light);
+}
+
+.main-nav a.active {
+    border-color: var(--accent);
+}
+
+/* Layout pagina */
+
+.page {
+    max-width: 1100px;
+    margin: 24px auto 40px auto;
+    padding: 0 16px;
+    display: grid;
+    gap: 24px;
+}
+
+@media (min-width: 900px) {
+    .page {
+        grid-template-columns: 1.1fr 1fr; /* info / formulier */
+    }
+}
+
+/* Cards */
+
+.card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Tekst */
+
+.card h2 {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1.1rem;
+}
+
+.card h3 {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.card p,
+.card li,
+address {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+address {
+    font-style: normal;
+}
+
+.openingstijden {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Links */
+
+.text-link {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.text-link:hover {
+    text-decoration: none;
+}
+
+/* Formulier */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-row label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.25);
+    background: #fdf7e7;
+    font-size: 0.95rem;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+/* Knop */
+
+.btn-primary {
+    align-self: flex-start;
+    padding: 10px 18px;
+    margin-top: 6px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: var(--accent);
+    color: var(--accent-light);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #11151e;
+}
+
+/* Footer */
+
+.site-footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}

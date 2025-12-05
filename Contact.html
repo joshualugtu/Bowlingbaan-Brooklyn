@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bowling Centre Brooklyn</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="logo-wrapper">
+        <img src="Images/Websitelogo.png" alt="Bowling Centre Brooklyn logo" class="logo">
+        <div class="site-title">
+            <h1>Bowling Centre Brooklyn</h1>
+            <p>Contact</p>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="reserveren.html">Reserveer</a>
+        <a href="mijn-reserveringen.html">Mijn reserveringen</a>
+        <a href="Algemene voorwaarden.html">Algemene voorwaarden</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
+
+<main class="page">
+    <section class="contact-info card">
+        <h2>Onze gegevens</h2>
+        <p>Heb je vragen, opmerkingen of een klacht? Neem gerust contact met ons op.</p>
+
+        <h3>Locatie</h3>
+        <address>
+            Bowling Centre Brooklyn<br>
+            Voorbeeldstraat 123<br>
+            1234 AB Voorbeeldstad<br>
+            Nederland
+        </address>
+        <!-- Eventueel echte Google Maps link invullen -->
+        <p><a href="#" class="text-link">Bekijk op Google Maps</a></p>
+
+        <h3>Openingstijden</h3>
+        <ul class="openingstijden">
+            <li><strong>Maandag t/m donderdag:</strong> 14:00 - 22:00 uur</li>
+            <li><strong>Vrijdag t/m zondag:</strong> 14:00 - 24:00 uur</li>
+            <li><strong>Magic bowlen:</strong> Vrijdag t/m zondag 22:00 - 24:00 uur</li>
+        </ul>
+
+        <h3>Contact</h3>
+        <p>Telefoon: <a href="tel:+31123456789" class="text-link">012-3456789</a></p>
+        <p>E-mail: <a href="mailto:info@bowlingbrooklyn.nl" class="text-link">info@bowlingbrooklyn.nl</a></p>
+    </section>
+x
+    <section class="contact-form card">
+        <h2>Stuur ons een bericht</h2>
+        <p>Vul het formulier in en we nemen zo snel mogelijk contact met je op.</p>
+
+        <form action="/submit-contact-form" method="post" class="form">
+            <div class="form-row">
+                <label for="naam">Naam</label>
+                <input type="text" id="naam" name="naam" required>
+            </div>
+
+            <div class="form-row">
+                <label for="email">E-mailadres</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-row">
+                <label for="onderwerp">Onderwerp</label>
+                <input type="text" id="onderwerp" name="onderwerp" required>
+            </div>
+
+            <div class="form-row">
+                <label for="type">Soort bericht</label>
+                <select id="type" name="type">
+                    <option value="vraag">Vraag</option>
+                    <option value="klacht">Klacht</option>
+                    <option value="opmerking">Opmerking</option>
+                    <option value="overig">Overig</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="bericht">Je bericht</label>
+                <textarea id="bericht" name="bericht" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Verstuur bericht</button>
+        </form>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2025 Bowling Centre Brooklyn</p>
+</footer>
+</body>
+</html>
