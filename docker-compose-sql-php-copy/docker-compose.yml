@@ -1,0 +1,36 @@
+services:
+  php:
+    build: .
+    depends_on:
+      - mysql
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html/
+      - ./php.ini:/usr/local/etc/php/php.ini
+
+  mysql:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_USER: "student"
+      MYSQL_PASSWORD: "veiligwachtwoord"
+    volumes:
+      #- mysqldata:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - certs:/ssl
+      - mysqlconf:/etc/mysql/conf.d/
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+
+volumes:
+  mysqldata:
+  certs:
+  mysqlconf:
