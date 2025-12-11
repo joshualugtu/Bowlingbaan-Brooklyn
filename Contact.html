@@ -4,22 +4,305 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Bowling Centre Brooklyn</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="bowling.css">
+=======
+    <style>
+        :root {
+            --bg-main: #0b0614;        /* zeer donkere achtergrond */
+            --bg-card: #181024;        /* donker paars voor cards */
+            --header-bg: #12081f;      /* header iets lichter */
+            --text-main: #f7f7ff;      /* bijna wit */
+            --accent-cyan: #23e5ff;    /* neon cyaan */
+            --accent-pink: #ff3fbf;    /* neon roze */
+            --accent-orange: #ff7b23;  /* neon oranje */
+            --border-soft: #332b4a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #3a265f 0%, #12081f 35%, #0b0614 100%);
+            color: var(--text-main);
+        }
+
+        /* HEADER */
+        .site-header {
+            background: radial-gradient(circle at top, #322050 0%, var(--header-bg) 55%, #06030b 100%);
+            border-bottom: 2px solid var(--accent-pink);
+            padding: 16px 24px 14px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo {
+            height: 190px;
+            width: auto;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0, transparent 60%);
+            padding: 6px;
+            filter:
+                drop-shadow(0 0 10px rgba(35,229,255,0.7))
+                drop-shadow(0 0 18px rgba(255,63,191,0.7));
+        }
+
+        .site-title h1 {
+            font-size: 1.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--accent-cyan);
+            text-shadow:
+                0 0 6px rgba(35,229,255,0.9),
+                0 0 14px rgba(255,63,191,0.7);
+        }
+
+        /* NAV */
+        .main-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 6px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            background: linear-gradient(135deg, rgba(255,63,191,0.18), rgba(35,229,255,0.08));
+            font-size: 0.9rem;
+            transition: 0.2s ease;
+            box-shadow: 0 0 8px rgba(0,0,0,0.6);
+        }
+
+        .main-nav a:hover {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
+            border-color: var(--accent-cyan);
+            color: #0b0614;
+            box-shadow:
+                0 0 8px rgba(255,63,191,0.7),
+                0 0 12px rgba(35,229,255,0.7);
+        }
+
+        .main-nav a.active {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+            border-color: var(--accent-orange);
+            color: #0b0614;
+            box-shadow:
+                0 0 10px rgba(35,229,255,0.9),
+                0 0 18px rgba(255,63,191,0.8);
+        }
+
+        /* LAYOUT */
+        .page {
+            max-width: 1100px;
+            margin: 32px auto 44px auto;
+            padding: 0 18px;
+            display: grid;
+            gap: 24px;
+        }
+
+        @media (min-width: 900px) {
+            .page {
+                grid-template-columns: 1.1fr 1fr;
+            }
+        }
+
+        /* CARDS */
+        .card {
+            position: relative;
+            background: radial-gradient(circle at top left, rgba(255,63,191,0.14), transparent 55%),
+                        radial-gradient(circle at bottom right, rgba(35,229,255,0.12), transparent 55%),
+                        var(--bg-card);
+            border-radius: 18px;
+            padding: 22px 24px;
+            box-shadow:
+                0 18px 40px rgba(0,0,0,0.85),
+                0 0 40px rgba(0,0,0,0.9);
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(35,229,255,0.7), rgba(255,63,191,0.7));
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 1.05rem;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 6px rgba(35,229,255,0.8);
+        }
+
+        .card h3 {
+            margin-top: 18px;
+            margin-bottom: 4px;
+            font-size: 0.98rem;
+            color: var(--accent-orange);
+        }
+
+        .card p,
+        .card li,
+        address {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #e7e4ff;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        .openingstijden {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .openingstijden li::before {
+            content: "● ";
+            color: var(--accent-pink);
+        }
+
+        .text-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+            color: var(--accent-pink);
+        }
+
+        /* FORM */
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-row label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f7f7ff;
+        }
+
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid #413565;
+            background: #0f0a1d;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+        }
+
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 1px;
+            box-shadow:
+                0 0 10px rgba(35,229,255,0.9),
+                inset 0 0 10px rgba(0,0,0,0.7);
+        }
+
+        /* BUTTON */
+        .btn-primary {
+            align-self: flex-start;
+            padding: 10px 22px;
+            margin-top: 6px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
+            color: #0b0614;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: 0.2s ease;
+            box-shadow:
+                0 0 10px rgba(255,63,191,0.7),
+                0 0 14px rgba(255,123,35,0.9);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+            box-shadow:
+                0 0 12px rgba(35,229,255,0.9),
+                0 0 20px rgba(255,63,191,0.9);
+        }
+
+        /* FOOTER */
+        .site-footer {
+            text-align: center;
+            padding: 18px;
+            font-size: 0.8rem;
+            color: #a9a3d9;
+            opacity: 0.85;
+        }
+    </style>
+>>>>>>> 37d63e3cb4e906ddf109a5c89687d3ae15b7e6e8
 </head>
 <body>
 <header class="site-header">
     <div class="logo-wrapper">
-        <img src="Images/Websitelogo.png" alt="Bowling Centre Brooklyn logo" class="logo">
+        <img src="Images/Llogo.png" alt="Bowling neon logo" class="logo">
         <div class="site-title">
             <h1>Bowling Centre Brooklyn</h1>
-            <p>Contact</p>
         </div>
     </div>
 
     <nav class="main-nav">
         <a href="Home.html">Home</a>
+<<<<<<< HEAD
         <a href="reserveren.html">Reserveer</a>
         <a href="mijn-reserveringen.html">Mijn reserveringen</a>
+=======
+        <a href="?">?</a>
+        <a href="?">?</a>
+>>>>>>> 37d63e3cb4e906ddf109a5c89687d3ae15b7e6e8
         <a href="Algemene voorwaarden.html">Algemene voorwaarden</a>
         <a href="contact.html" class="active">Contact</a>
         <a href="login.html" class="login-btn">Login</a>
@@ -38,7 +321,6 @@
             1234 AB Voorbeeldstad<br>
             Nederland
         </address>
-        <!-- Eventueel echte Google Maps link invullen -->
         <p><a href="#" class="text-link">Bekijk op Google Maps</a></p>
 
         <h3>Openingstijden</h3>
@@ -52,7 +334,7 @@
         <p>Telefoon: <a href="tel:+31123456789" class="text-link">012-3456789</a></p>
         <p>E-mail: <a href="mailto:info@bowlingbrooklyn.nl" class="text-link">info@bowlingbrooklyn.nl</a></p>
     </section>
-x
+
     <section class="contact-form card">
         <h2>Stuur ons een bericht</h2>
         <p>Vul het formulier in en we nemen zo snel mogelijk contact met je op.</p>
