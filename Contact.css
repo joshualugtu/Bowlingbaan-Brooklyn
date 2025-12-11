@@ -23,6 +23,7 @@ body {
 /* Header */
 
 .site-header {
+    align-items: center;
     background: var(--bg-card);
     border-bottom: 3px solid var(--accent);
     padding: 12px 24px;
