@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registreren - Bowling Centre Brooklyn</title>
+    <title>Login - Bowling Centre Brooklyn</title>
     <link rel="stylesheet" href="bowling.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <img src="Images/Websitelogo.png" alt="Bowling Centre Brooklyn logo" class="logo">
         <div class="site-title">
             <h1>Bowling Centre Brooklyn</h1>
-            <p>Registreren</p>
+            <p>Login</p>
         </div>
     </div>
 
@@ -28,33 +28,28 @@
 
 <main class="page">
     <section class="contact-form card">
-        <h2>Account registreren</h2>
-        <p>Vul je gegevens in om een nieuw account aan te maken.</p>
+        <h2>Login</h2>
 
-        <form action="register.php" method="POST" class="form">
-
+        <form action="login.php" method="POST" class="form">
             <div class="form-row">
-                <label for="username">Gebruikersnaam</label>
-                <input type="text" id="username" name="username" required>
+                <label>Username:</label>
+                <input type="text" name="username" required>
             </div>
 
             <div class="form-row">
-                <label for="email">E-mailadres</label>
-                <input type="email" id="email" name="email" required>
+                <label>Password:</label>
+                <input type="password" name="password" required>
             </div>
 
-            <div class="form-row">
-                <label for="password">Wachtwoord</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-            <div class="form-row">
-                <label for="password_confirm">Herhaal wachtwoord</label>
-                <input type="password" id="password_confirm" name="password_confirm" required>
-            </div>
-
-            <button type="submit" class="btn-primary">Registreren</button>
+            <button type="submit" name="login" class="btn-primary">Login</button>
         </form>
+
+        <!-- Register button under the login button -->
+        <div class="register-section">
+            <p>Nog geen account?</p>
+            <a href="register.html" class="btn-secondary">Account registreren</a>
+        </div>
+
     </section>
 </main>
 
@@ -64,5 +59,3 @@
 
 </body>
 </html>
-`
-
